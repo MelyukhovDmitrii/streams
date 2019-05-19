@@ -32,17 +32,6 @@ public class Translation implements Serializable {
     @Column(name = "private_key")
     private String privateKey;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 
     public String getPublicKey() {
         return publicKey;

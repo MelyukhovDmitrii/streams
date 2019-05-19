@@ -1,1 +1,19 @@
-
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+      temp:
+        use_jdbc_metadata_defaults: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/streams
+    username: postgres
+    password: 123
+    driverClassName: org.postgresql.Driver

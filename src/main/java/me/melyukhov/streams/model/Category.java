@@ -21,16 +21,6 @@ public class Category implements Serializable {
     @Column(name = "count_viewers")
     private int countViewers;
 
-    public Set<Translation> getTranslations() {
-        return translations;
-    }
-
-    public void setTranslations(Set<Translation> translations) {
-        this.translations = translations;
-    }
-
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "translation")
-    private Set<Translation> translations;
 
     public int getId() {
         return id;

@@ -6,7 +6,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class User implements Serializable {
+@Table(name = "user_info")
+public class UserInfo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +32,7 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column(name = "bio", columnDefinition = "TEXT")
+    @Column(name = "bio")
     private String BIO;
 
     @Column(name = "date_registration")
