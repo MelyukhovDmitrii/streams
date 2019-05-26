@@ -3,7 +3,8 @@ spring:
     database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
+      dialect: org.hibernate.dialect.PostgreSQLDialect
       temp:
         use_jdbc_metadata_defaults: false
     properties:

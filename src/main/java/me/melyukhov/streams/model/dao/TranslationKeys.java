@@ -16,19 +16,6 @@ public class TranslationKeys {
     @Column(name = "public_keyq")
     private String publicKey;
 
-    @Access(AccessType.PROPERTY)
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="translation")
-    private Translation translation;
-
-    public Translation getTranslation() {
-        return translation;
-    }
-
-    public void setTranslation(Translation translation) {
-        this.translation = translation;
-    }
-
     public int getId() {
         return id;
     }

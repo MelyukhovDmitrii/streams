@@ -26,9 +26,22 @@ public class Translation implements Serializable {
     @Column(name = "begin_time")
     private Date beginTime;
 
+    @Access(AccessType.PROPERTY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="translation_keys")
+    private TranslationKeys translationKeys;
+
     @JoinColumn(name = "category", nullable = false)
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Category category;
+
+    public TranslationKeys getTranslationKeys() {
+        return translationKeys;
+    }
+
+    public void setTranslationKeys(TranslationKeys translationKeys) {
+        this.translationKeys = translationKeys;
+    }
 
     public Category getCategory() {
         return category;

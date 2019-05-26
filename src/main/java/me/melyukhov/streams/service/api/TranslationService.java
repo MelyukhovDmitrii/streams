@@ -11,4 +11,6 @@ public interface TranslationService {
 
     List<Translation> getTranslationByCategory(Category category);
 
+    Translation save(Translation translation);
+
 }

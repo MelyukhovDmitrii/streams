@@ -26,14 +26,24 @@ public class TranslationController {
     CategoryService categoryService;
 
     @GetMapping("/category/{id}")
-    public Iterable<Translation> getTranslationByCategory(@PathVariable Integer id){
+    public Iterable<Translation> getTranslationsByCategory(@PathVariable Integer id){
         Optional<Category> category = categoryService.getById(id);
         return translationService.getTranslationByCategory(category.get());
     }
 
     @GetMapping("/{id}")
     public Translation getTranslatinById(@PathVariable Integer id){
-        Translation translation = translationService.getTranslationById(id);
+        Translation translation = new Translation();
+        TranslationKeys translationKeys = new TranslationKeys();
+        translationKeys.setPublicKey("sassf");
+        translationKeys.setPrivateKey("qfwff");
+        translation.setName("name");
+        translation.setTranslationKeys(translationKeys);
+        Category category = new Category();
+        category.setName("category");
+        translation.setCategory(category);
+        translation = translationService.save(translation);
+        Translation translation1 = translationService.getTranslationById(translation.getId());
         return translation;
     }
 
