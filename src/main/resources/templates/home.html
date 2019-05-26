@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../static/css/common.css">
+	<link rel="stylesheet" type="text/css" href="/css/common.css">
 	<title>_streams</title>
 </head>
 <body>
@@ -8,14 +8,19 @@
 	<nav class="top">
 		<div class="logo">_streams</div>
 		<ul class="list-inline main-menu" style="height: 60px">
-			<li class="active"><a href="/">Главная</a></li>
-			<li><a href="/">Категории</a></li>
+			<li><a href="/">Главная</a></li>
+			<li class="active"><a href="/">Категории</a></li>
 			<li><a href="/">Трансляция</a></li>
 		</ul>
 	</nav>
 	<div class="mid">
-		<div class="pidor" onclick="alert('Ну ты тупо пидор');">Ты пидор</div>
+		<div class="clean-after">
 
+			<div th:each="category : ${categories}">
+				<div th:replace="fragments :: category-min(category=${category})"></div>
+			</div>
+
+		</div>
 	</div>
 	<div class="bot"></div>
 </div>

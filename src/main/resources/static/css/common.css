@@ -13,7 +13,8 @@ body{
 }
 
 .top{
-	position: block;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 40px;
     background-color: #111;
@@ -21,9 +22,10 @@ body{
 }
 
 .mid{
-	margin: 20px auto;
+	margin: 80px auto;
+	padding: 20px;
 	width: 800px;
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 }
 
 .list-inline{
@@ -35,7 +37,7 @@ body{
 }
 
 .main-menu a{
-	padding: 18px 20px;
+	padding: 18px 20px 19px 20px;
 	text-decoration: none;
 	color: #fff;
 }
@@ -64,4 +66,38 @@ body{
 	float: left;
 	margin-top: -10px;
 	color: #fff;
+}
+
+.stream-block{
+	margin: 10px;
+	width: 180px;
+	min-height: 300px;
+	border: 0px solid #000;
+	border-radius: 15px;
+	float: left;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(10, 10, 20, 0.5);
+	transition-property: box-shadow;
+	transition-duration: 0.7s;
+	cursor: pointer;
+}
+
+.stream-block:hover{
+	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
+}
+
+.stream-block .image{
+	width: 180px;
+	height: 250px;
+	background-size: 100% 100%;
+}
+
+.stream-block .description{
+	padding: 10px;
+}
+
+.clean-after:after {
+	content: "";
+	display: block;
+	clear: both;
 }
