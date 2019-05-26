@@ -1,4 +1,4 @@
-package me.melyukhov.streams.model;
+package me.melyukhov.streams.model.dao;
 
 public enum Status {
     ACTIVE,

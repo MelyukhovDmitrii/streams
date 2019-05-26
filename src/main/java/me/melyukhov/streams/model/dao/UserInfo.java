@@ -1,4 +1,4 @@
-package me.melyukhov.streams.model;
+package me.melyukhov.streams.model.dao;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

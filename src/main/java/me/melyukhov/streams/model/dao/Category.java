@@ -1,4 +1,4 @@
-package me.melyukhov.streams.model;
+package me.melyukhov.streams.model.dao;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,6 +21,16 @@ public class Category implements Serializable {
     @Column(name = "count_viewers")
     private int countViewers;
 
+    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    private Set<Translation> translations;
+
+    public Set<Translation> getTranslations() {
+        return translations;
+    }
+
+    public void setTranslations(Set<Translation> translations) {
+        this.translations = translations;
+    }
 
     public int getId() {
         return id;

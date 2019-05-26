@@ -1,4 +1,4 @@
-package me.melyukhov.streams.model;
+package me.melyukhov.streams.model.dao;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -26,27 +26,16 @@ public class Translation implements Serializable {
     @Column(name = "begin_time")
     private Date beginTime;
 
-    @Column(name = "public_key")
-    private String publicKey;
+    @JoinColumn(name = "category", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    private Category category;
 
-    @Column(name = "private_key")
-    private String privateKey;
-
-
-    public String getPublicKey() {
-        return publicKey;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setPublicKey(String publicKey) {
-        this.publicKey = publicKey;
-    }
-
-    public String getPrivateKey() {
-        return privateKey;
-    }
-
-    public void setPrivateKey(String privateKey) {
-        this.privateKey = privateKey;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -88,4 +77,5 @@ public class Translation implements Serializable {
     public void setBeginTime(Date beginTime) {
         this.beginTime = beginTime;
     }
+
 }
