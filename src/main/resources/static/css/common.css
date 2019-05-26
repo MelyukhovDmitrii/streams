@@ -82,6 +82,16 @@ body{
 	cursor: pointer;
 }
 
+a.clean{
+	color: #000;
+	text-decoration: none;
+}
+
+a.clean:visited{
+	color: #000;
+	text-decoration: none;
+}
+
 .stream-block:hover{
 	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
 }

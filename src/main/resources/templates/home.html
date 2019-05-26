@@ -17,7 +17,7 @@
 		<div class="clean-after">
 
 			<div th:each="category : ${categories}">
-				<div th:replace="fragments :: category-min(category=${category})"></div>
+				<div th:replace="category-min :: category-min(category=${category})"></div>
 			</div>
 
 		</div>

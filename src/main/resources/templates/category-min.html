@@ -1,7 +1,7 @@
 <div th:fragment="category-min(category)">
-    <a href="${category.name}">
+    <a class="clean" th:href="@{${category.name}}">
         <div class="stream-block">
-            <div class="image" style="background-image: url('${category.picturePath}')"></div>
+            <div class="image" th:style="'background-image:url('+@{${category.picturePath}}+');'"></div>
             <div class="description" th:text="${category.name}">
             </div>
         </div>
