@@ -23,6 +23,11 @@ public class Translation implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(name = "picture_path")
+    private String picturePath;
+
+    private String link;
+
     @Column(name = "begin_time")
     private Date beginTime;
 
@@ -34,6 +39,34 @@ public class Translation implements Serializable {
     @JoinColumn(name = "category", nullable = false)
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Category category;
+
+    @JoinColumn(name = "user_info")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    private UserInfo userInfo;
+
+    public String getPicturePath() {
+        return picturePath;
+    }
+
+    public void setPicturePath(String picturePath) {
+        this.picturePath = picturePath;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public TranslationKeys getTranslationKeys() {
         return translationKeys;

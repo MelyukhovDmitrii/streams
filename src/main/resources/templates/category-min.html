@@ -2,8 +2,8 @@
     <a class="clean" th:href="@{'/category/'+${category.link}}">
         <div class="stream-block">
             <div class="image" th:style="'background-image:url('+@{${category.picturePath}}+');'"></div>
-            <div class="description" th:text="${category.name}">
-            </div>
+            <div class="category-name" th:text="${category.name}"></div>
+            <div class="countViewers" th:text="@{ 'Зрителей: ' + ${category.countViewers}}"></div>
         </div>
     </a>
 </div>

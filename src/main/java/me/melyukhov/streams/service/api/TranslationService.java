@@ -13,4 +13,6 @@ public interface TranslationService {
 
     Translation save(Translation translation);
 
+    List<Translation> getAllTranslations();
+
 }

@@ -102,8 +102,18 @@ a.clean:visited{
 	background-size: 100% 100%;
 }
 
-.stream-block .description{
-	padding: 10px;
+.stream-block .category-name{
+	padding-top: 7px;
+    padding-left: 7px;
+}
+
+.stream-block .countViewers{
+	padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    float: right;
+    color: #808080;
+    font-size: 12px;
 }
 
 .clean-after:after {
