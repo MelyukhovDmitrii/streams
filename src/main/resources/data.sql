@@ -1,0 +1,10 @@
+insert into category (name, picture_path, count_viewers) values ('Dota 2', '/categories/Dota.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('Counter Strike', '/categories/CS.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('Fortnite', '/categories/Frotnite.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('GTA5', '/categories/GTA5.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('Heartstone', '/categories/Heartstone.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('Just chatting', '/categories/IRL.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('League of Legends', '/categories/LOL.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('PUBG', '/categories/PUBG.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('Rocket League', '/categories/RocketLegue.jpg', 10000);
+insert into category (name, picture_path, count_viewers) values ('World of Warkraft', '/categories/WOW.jpg', 10000);
