@@ -21,6 +21,8 @@ public class Category implements Serializable {
     @Column(name = "count_viewers")
     private int countViewers;
 
+    private String link;
+
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
     private Set<Translation> translations;
 

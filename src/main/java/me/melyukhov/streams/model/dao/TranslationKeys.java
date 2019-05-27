@@ -10,10 +10,10 @@ public class TranslationKeys {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "private_keyq")
+    @Column(name = "private_key")
     private String privateKey;
 
-    @Column(name = "public_keyq")
+    @Column(name = "public_key")
     private String publicKey;
 
     public int getId() {
