@@ -1,10 +1,10 @@
-insert into category (name, picture_path, count_viewers, link) values ('Dota 2', '/categories/Dota.jpg', 10000, '/categories/dota');
-insert into category (name, picture_path, count_viewers, link) values ('Counter Strike', '/categories/CS.jpg', 10000, '/categories/cs');
-insert into category (name, picture_path, count_viewers, link) values ('Fortnite', '/categories/Fortnite.jpg', 10000, '/categories/fortnite');
+insert into category (name, picture_path, count_viewers, link) values ('Dota 2', '/categories/Dota.jpg', 10000, 'dota');
+insert into category (name, picture_path, count_viewers, link) values ('Counter Strike', '/categories/CS.jpg', 10000, 'cs');
+insert into category (name, picture_path, count_viewers, link) values ('Fortnite', '/categories/Fortnite.jpg', 10000, 'fortnite');
 insert into category (name, picture_path, count_viewers, link) values ('GTA5', '/categories/GTA5.jpg', 10000, '/categories/gta');
-insert into category (name, picture_path, count_viewers, link) values ('Hearthstone', '/categories/Hearthstone.jpg', 10000, '/categories/hearthstone');
-insert into category (name, picture_path, count_viewers, link) values ('Just chatting', '/categories/IRL.jpg', 10000, '/categories/justchat');
-insert into category (name, picture_path, count_viewers, link) values ('League of Legends', '/categories/LOL.jpg', 10000, '/categories/lol');
+insert into category (name, picture_path, count_viewers, link) values ('Hearthstone', '/categories/Hearthstone.jpg', 10000, 'hearthstone');
+insert into category (name, picture_path, count_viewers, link) values ('Just chatting', '/categories/IRL.jpg', 10000, 'justchat');
+insert into category (name, picture_path, count_viewers, link) values ('League of Legends', '/categories/LOL.jpg', 10000, 'lol');
 insert into category (name, picture_path, count_viewers, link) values ('PUBG', '/categories/PUBG.jpg', 10000, '/categories/pubg');
-insert into category (name, picture_path, count_viewers, link) values ('Rocket League', '/categories/RocketLegue.jpg', 10000, '/categories/rl');
-insert into category (name, picture_path, count_viewers, link) values ('World of Warkraft', '/categories/WOW.jpg', 10000, '/categories/wow');
+insert into category (name, picture_path, count_viewers, link) values ('Rocket League', '/categories/RocketLeague.jpg', 10000, 'rl');
+insert into category (name, picture_path, count_viewers, link) values ('World of Warkraft', '/categories/WOW.jpg', 10000, 'wow');

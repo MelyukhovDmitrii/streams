@@ -15,14 +15,6 @@ public class Category implements Serializable {
     @Column
     private String name;
 
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
     @Column(name = "picture_path")
     private String picturePath;
 
@@ -33,6 +25,14 @@ public class Category implements Serializable {
 
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
     private Set<Translation> translations;
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public Set<Translation> getTranslations() {
         return translations;
