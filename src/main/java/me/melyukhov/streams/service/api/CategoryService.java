@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface CategoryService {
 
-    Optional<Category> getById(Integer id);
+    Category getById(Integer id);
 
-    Iterable<Category> getAll();
+    List<Category> getAll();
 
+    Category getByLink(String link);
 }

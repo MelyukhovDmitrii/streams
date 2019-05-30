@@ -15,17 +15,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/translation")
+//@RestController
+//@RequestMapping("/translation")
 public class TranslationController {
 
-    @Autowired
+    /*@Autowired
     TranslationService translationService;
 
     @Autowired
     CategoryService categoryService;
 
-    @GetMapping("/category/{id}")
+    /*@GetMapping("/category/{id}")
     public Iterable<Translation> getTranslationsByCategory(@PathVariable Integer id){
         Optional<Category> category = categoryService.getById(id);
         return translationService.getTranslationByCategory(category.get());
@@ -47,5 +47,5 @@ public class TranslationController {
         return translation;
     }
 
-
+*/
 }

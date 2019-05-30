@@ -13,6 +13,7 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -70,7 +71,11 @@ public class TranslationServiceImpl implements TranslationService {
         for(Translation translation: translationRepository.findAll()){
             translations.add(translation);
         }
-        translations.sort((a, b)->a.getCountViewers() > b.getCountViewers() ? a.getCountViewers() : b.getCountViewers());
-        return translations;
+        return translations.stream().sorted(Comparator.comparing(Translation::getCountViewers).reversed()).collect(Collectors.toList());
+    }
+
+    @Override
+    public Translation getTranslationByLink(String link) {
+        return translationRepository.findByLink(link).orElse(null);
     }
 }

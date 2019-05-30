@@ -15,4 +15,6 @@ public interface TranslationService {
 
     List<Translation> getAllTranslations();
 
+    Translation getTranslationByLink(String link);
+
 }

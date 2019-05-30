@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface TranslationRepository extends CrudRepository<Translation, Integer> {
 
     List<Optional<Translation>> findByCategory(Category category);
+    Optional<Translation> findByLink(String link);
 }

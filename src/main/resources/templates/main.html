@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+    <th:block th:switch="${page}">
+        <link th:case="home" rel="stylesheet" href="home-page.css"/>
+        <link th:case="categories" rel="stylesheet" href="/css/categories-page.css"/>
+        <link th:case="translations" rel="stylesheet" href="/css/translations-page.css"/>
+        <link th:case="translation" rel="stylesheet" href="/css/translation-page.css"/>
+    </th:block>
+    <title>_streams</title>
+</head>
+<body>
+<div id="root">
+    <nav class="top">
+        <div class="logo">_streams</div>
+        <ul class="list-inline main-menu" style="height: 60px">
+            <li th:class="${active_main}"><a href="/">Главная</a></li>
+            <li th:class="${active_categories}"><a href="/categories">Категории</a></li>
+            <li th:class="${active_translations}"><a href="/translations">Список трансляций</a></li>
+            <li th:class="${active_translation}" disabled="true"><a>Трансляция</a></li>
+        </ul>
+    </nav>
+    <div class="mid">
+        <div th:if="${page=='translations'}">
+            <div class="clean-after">
+                <div th:replace="translations :: translations(translations=${translations})"></div>
+            </div>
+        </div>
+        <div th:if="${page=='categories'}">
+            <div th:replace="categories :: categories(categories=${categories})"></div>
+        </div>
+        <div th:if="${page=='translation'}">
+            <div th:replace="translation-simple :: translation-simple(translations=${translation})"></div>
+        </div>    
+    </div>
+    <div class="bot"></div>
+</div>
+</body>
+</html>

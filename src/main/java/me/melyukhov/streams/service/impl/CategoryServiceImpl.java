@@ -6,8 +6,11 @@ import me.melyukhov.streams.service.api.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Optional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
@@ -17,12 +20,21 @@ public class CategoryServiceImpl implements CategoryService {
 
 
     @Override
-    public Optional<Category> getById(Integer id) {
-        return categoryRepository.findById(id);
+    public Category getById(Integer id) {
+        return categoryRepository.findById(id).orElse(null);
     }
 
     @Override
-    public Iterable<Category> getAll(){
-        return categoryRepository.findAll();
+    public List<Category> getAll(){
+        List<Category> categories = new ArrayList<>();
+        for(Category category: categoryRepository.findAll()){
+            categories.add(category);
+        }
+        return categories.stream().sorted(Comparator.comparing(Category::getCountViewers).reversed()).collect(Collectors.toList());
+    }
+
+    @Override
+    public Category getByLink(String link) {
+        return categoryRepository.findByLink(link).orElse(null);
     }
 }
