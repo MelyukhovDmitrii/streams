@@ -17,6 +17,7 @@
 	transition-property: box-shadow;
 	transition-duration: 0.7s;
 	cursor: pointer;
+	background-color: #fff;
 }
 
 a.clean{

@@ -21,6 +21,7 @@ insert into translation_keys (private_key, public_key) values ('1231241d', 'wdq1
 insert into translation_keys (private_key, public_key) values ('1231241d', 'wdq1121');
 insert into translation_keys (private_key, public_key) values ('1231241d', 'wdq1121');
 
+insert into user_info (login, email, password) values ('EjiSarmat', 'eji@mail.com', 'asdasdqw');
 
 insert into translation (name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)
 values ('Стрим по доте', 1231, 'описание', '2019-01-01', 1, 1, 'dota', '/translations/dota.jpg');
@@ -33,8 +34,8 @@ values ('Стрим по GTA', 511, 'описание', '2019-01-01', 4, 4, 'gta
 insert into translation (name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)
 values ('Стрим по Hearthstone', 1689, 'описание', '2019-01-01', 5, 5, 'hearthstone', '/translations/hart.jpg');
 
-insert into translation (name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)
-values ('Стрим Ежи', 1450, 'описание', '2019-01-01', 6, 6, 'eji', '/translations/eji.png');
+insert into translation (user_info, name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)
+values (1, 'Стрим Ежи', 1450, 'описание', '2019-01-01', 6, 6, 'eji', '/translations/eji.png');
 insert into translation (name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)
 values ('Стрим по Лиге Легенд', 2512, 'описание', '2019-01-01', 7, 7, 'lol', '/translations/lol.jpg');
 insert into translation (name, count_viewers, description, begin_time, category, translation_keys, link, picture_path)

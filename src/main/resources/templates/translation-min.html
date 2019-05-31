@@ -1,8 +1,17 @@
 <div th:fragment="translation-min(translation)">
 	<div class="translation-main">
-		<div class="translation" th:style="'background-image:url('+@{${translation.picturePath}}+');'">
-		<div class="translation-name" th:text="${translation.name}"></div>
+		<div class="translation-box">
+			<div class="translation" th:style="'background-image:url('+@{${translation.picturePath}}+');'"></div>
+			<div class="translation-content">
+				<div class="name-and-count clean-after">
+					<div class="translation-name" th:text="${translation.name}"></div>
+					<div class="countViewers" th:text="@{ 'Зрителей: ' + ${translation.countViewers}}">
+					</div>
+				</div>
+				<div class="user" th:text="${translation.UserInfo.login}"></div>
+			</div>
+	</div>
 		<div class="translation-description" th:text="${translation.description}"></div>
-		<div class="countViewers" th:text="${translation.countViewers}"></div>
+		
 	</div>
 </div>

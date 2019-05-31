@@ -17,6 +17,7 @@
 	transition-property: box-shadow;
 	transition-duration: 0.7s;
 	cursor: pointer;
+	background-color: #fff;
 }
 
 a.clean{
@@ -31,6 +32,7 @@ a.clean:visited{
 
 .stream-block:hover{
 	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
+	background-color: #fff;
 }
 
 .stream-block .image{

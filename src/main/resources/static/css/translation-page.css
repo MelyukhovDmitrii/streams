@@ -1,0 +1,55 @@
+.mid{
+	margin: 80px auto;
+	padding: 20px;
+	width: 1280px;
+	/*border: 1px solid #000;*/
+}
+
+.translation-main{
+	width: 1280px;
+	min-height: 800px;
+}
+
+.translation{
+	height: 720px;
+	width: 1280px;
+	background-size: 100% 100%;
+	border-radius: 10px 10px 0px 0px;
+}
+
+.name-and-count{
+	padding: 7px;
+}
+
+.user {
+	padding: 7px;
+}
+
+.name-and-count .translation-name{
+	float: left;
+}
+
+.name-and-count .countViewers{
+	float: right;
+}
+
+.clean-after:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.translation-box{
+	box-shadow: 0 0 10px #999;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.translation-content{
+	padding: 7px;
+}
+
+.translation-description{
+	padding-top: 20px;
+	padding-left: 10px;
+}

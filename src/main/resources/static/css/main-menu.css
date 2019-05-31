@@ -4,12 +4,14 @@ html{
 
 body{
     margin: 0;
-    background-color: #eee;
+    background-color: rgb(250, 249, 250);
+    color: #111;
 }
 
 #root{
     width: 100%;
     min-height: 100vh;
+    background-color: #faf9fa;
 }
 
 .top{
@@ -19,13 +21,6 @@ body{
 	height: 40px;
     background-color: #111;
     padding-top: 20px;
-}
-
-.mid{
-	margin: 80px auto;
-	padding: 20px;
-	width: 800px;
-	/*border: 1px solid #000;*/
 }
 
 .list-inline{

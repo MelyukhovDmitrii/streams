@@ -3,6 +3,7 @@ package me.melyukhov.streams.service.impl;
 import me.melyukhov.streams.model.dao.Category;
 import me.melyukhov.streams.model.dao.Translation;
 import me.melyukhov.streams.model.dao.TranslationKeys;
+import me.melyukhov.streams.model.dao.UserInfo;
 import me.melyukhov.streams.model.repository.TranslationKeysRepository;
 import me.melyukhov.streams.model.repository.TranslationRepository;
 import me.melyukhov.streams.service.api.TranslationService;
@@ -76,6 +77,21 @@ public class TranslationServiceImpl implements TranslationService {
 
     @Override
     public Translation getTranslationByLink(String link) {
-        return translationRepository.findByLink(link).orElse(null);
+
+        Optional<Translation> translationOptional = translationRepository.findByLink(link);
+        Translation translation = null;
+
+        if(translationOptional.isPresent()){
+            translation = translationOptional.get();
+            UserInfo userInfo = translation.getUserInfo();
+            if(userInfo != null){
+                userInfo.setEmail(null);
+                userInfo.setPassword(null);
+                userInfo.setStatus(null);
+            } else {
+                userInfo = new UserInfo();
+            }
+        }
+        return translation;
     }
 }
