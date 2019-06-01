@@ -21,6 +21,7 @@ body{
 	height: 40px;
     background-color: #111;
     padding-top: 20px;
+    overflow-y: hidden;
 }
 
 .list-inline{
@@ -28,6 +29,10 @@ body{
 }
 
 .list-inline li{
+	display: inline-block;
+}
+
+.main-menu{
 	display: inline-block;
 }
 
@@ -46,6 +51,7 @@ body{
 }
 
 .main-menu li.active{
+
 	height: 40px;
 	border-bottom: 4px solid #aaa;
 }
@@ -55,10 +61,34 @@ body{
 }
 
 .logo{
+	font-family: "Monotype Corsiva" Cursive;
 	padding: 0 20px;
 	font-size: 30px;
 	display: inline-block;
 	float: left;
 	margin-top: -10px;
+	color: #fff;
+}
+
+.auth_button_area{
+	float: right;
+	margin-top: -19px;
+}
+
+.auth_button_area>a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 19px 20px 19px 20px;
+	color: #fff;
+	transition-property: background; 
+	transition-duration: 0.4s;
+}
+
+.auth_button_area>a:hover{
+	background: rgba(255,255,255,0.3);
+}
+
+.auth_button_area>a:visited{
+	text-decoration: none;
 	color: #fff;
 }

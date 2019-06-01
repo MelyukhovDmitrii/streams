@@ -5,10 +5,9 @@
 	/*border: 1px solid #000;*/
 }
 
-.stream-block{
+.translation-block{
 	margin: 10px;
 	width: 330px;
-	min-height: 250px;
 	border: 0px solid #000;
 	border-radius: 15px;
 	float: left;
@@ -30,12 +29,11 @@ a.clean:visited{
 	text-decoration: none;
 }
 
-.stream-block:hover{
+.translation-block:hover{
 	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
 }
 
-
-.image{
+.translation-block .image{
 	width: 320px;
 	height: 180px;
 	background-size: 100% 100%;
@@ -43,15 +41,15 @@ a.clean:visited{
 	margin: 5px
 }
 
-.stream-block .category-name{
+.translation-name{
 	padding-top: 7px;
     padding-left: 7px;
+    float: left;
 }
 
-.stream-block .countViewers{
+.countViewers{
 	padding-right: 10px;
-    padding-bottom: 4px;
-    padding-top: 4px;
+    padding-top: 10px;
     float: right;
     color: #808080;
     font-size: 12px;
@@ -61,4 +59,8 @@ a.clean:visited{
 	content: "";
 	display: block;
 	clear: both;
+}
+
+.user {
+	padding: 7px;
 }

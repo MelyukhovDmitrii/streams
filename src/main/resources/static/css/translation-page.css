@@ -6,13 +6,13 @@
 }
 
 .translation-main{
-	width: 1280px;
-	min-height: 800px;
+	/*width: 1280px;
+	min-height: 800px;*/
 }
 
 .translation{
 	height: 720px;
-	width: 1280px;
+/*	width: 1280px;*/
 	background-size: 100% 100%;
 	border-radius: 10px 10px 0px 0px;
 }
@@ -21,8 +21,11 @@
 	padding: 7px;
 }
 
-.user {
-	padding: 7px;
+.user-name {
+	padding-left: 7px;
+    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-right: 7px;
 }
 
 .name-and-count .translation-name{
@@ -33,6 +36,56 @@
 	float: right;
 }
 
+.stream-block{
+	margin: 10px;
+	width: 180px;
+	min-height: 300px;
+	border: 0px solid #000;
+	border-radius: 15px;
+	float: left;
+	overflow: hidden;
+	box-shadow: 0 0 10px rgba(10, 10, 20, 0.5);
+	transition-property: box-shadow;
+	transition-duration: 0.7s;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+a.clean{
+	color: #000;
+	text-decoration: none;
+}
+
+a.clean:visited{
+	color: #000;
+	text-decoration: none;
+}
+
+.stream-block:hover{
+	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
+	background-color: #fff;
+}
+
+.stream-block .image{
+	width: 180px;
+	height: 250px;
+	background-size: 100% 100%;
+}
+
+.stream-block .category-name{
+	padding-top: 7px;
+    padding-left: 7px;
+}
+
+.stream-block .countViewers{
+	padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    float: right;
+    color: #808080;
+    font-size: 12px;
+}
+
 .clean-after:after {
 	content: "";
 	display: block;
@@ -40,9 +93,10 @@
 }
 
 .translation-box{
-	box-shadow: 0 0 10px #999;
+	box-shadow: 0 0 10px #eee;
 	background-color: #fff;
 	border-radius: 10px;
+	width: 1280px;
 }
 
 .translation-content{

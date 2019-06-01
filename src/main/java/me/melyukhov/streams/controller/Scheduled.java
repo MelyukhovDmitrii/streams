@@ -14,7 +14,7 @@ public class Scheduled {
     @Autowired
     CategoryRepository categoryRepository;
 
-    @org.springframework.scheduling.annotation.Scheduled(fixedRate = 5000)
+    @org.springframework.scheduling.annotation.Scheduled(fixedRate = 20000)
     public void updateCategories(){
         for(Category category: categoryRepository.findAll()){
             int count = 0;

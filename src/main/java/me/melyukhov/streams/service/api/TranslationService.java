@@ -17,4 +17,7 @@ public interface TranslationService {
 
     Translation getTranslationByLink(String link);
 
+    Translation getTopTranslation();
+
+    List<Translation> getTop3WithoutTop1();
 }

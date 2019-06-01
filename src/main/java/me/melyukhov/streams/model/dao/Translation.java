@@ -1,5 +1,8 @@
 package me.melyukhov.streams.model.dao;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -31,6 +34,10 @@ public class Translation implements Serializable {
     @Column(name = "begin_time")
     private Date beginTime;
 
+    @Column(length = 32, columnDefinition = "varchar(32) default 'ACTIVE'")
+    @Enumerated(EnumType.STRING)
+    private Status status = Status.ACTIVE;
+
     @Access(AccessType.PROPERTY)
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="translation_keys")
@@ -43,6 +50,14 @@ public class Translation implements Serializable {
     @JoinColumn(name = "user_info")
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private UserInfo userInfo;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
     public String getPicturePath() {
         return picturePath;

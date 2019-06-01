@@ -1,0 +1,16 @@
+<div th:fragment="home-min(translation, categories, translations)">
+    <div class="pop">Самая популярная трансляция:</div>
+    <div th:each="top : ${translation}">
+        <div th:replace="translation-min :: translation-min(translation=${top})"/></div>
+    <div class="pop">Популярные трансляции:</div>
+    <div class="clean-after">
+        <div th:each="translation : ${translations}">
+            <div th:replace="translations-min :: translations-min(translation=${translation})"></div>
+        </div>
+    </div>
+    <div class="pop">Популярные категории:</div>
+    <div class="clean-after">
+        <div th:each="category : ${categories}">
+            <div th:replace="category-min :: category-min(category=${category})"/></div>
+    </div>
+</div>

@@ -5,7 +5,7 @@
 	/*border: 1px solid #000;*/
 }
 
-.stream-block{
+.category-block{
 	margin: 10px;
 	width: 180px;
 	min-height: 300px;
@@ -30,23 +30,23 @@ a.clean:visited{
 	text-decoration: none;
 }
 
-.stream-block:hover{
+.category-block:hover{
 	box-shadow: 0 0 10px rgba(34, 83, 208, 1);
 	background-color: #fff;
 }
 
-.stream-block .image{
+.category-block .category-image{
 	width: 180px;
 	height: 250px;
 	background-size: 100% 100%;
 }
 
-.stream-block .category-name{
+.category-block .category-name{
 	padding-top: 7px;
     padding-left: 7px;
 }
 
-.stream-block .countViewers{
+.category-block .countViewers{
 	padding-right: 10px;
     padding-bottom: 4px;
     padding-top: 4px;

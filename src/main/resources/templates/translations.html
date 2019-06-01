@@ -1,7 +1,5 @@
 <div th:fragment="translations(translations)">
-	<div class="clean-after">
 		<div th:each="translation : ${translations}">
 			<div th:replace="translations-min :: translations-min(translation=${translation})"></div>
 		</div>
-	</div>
 </div>

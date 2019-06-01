@@ -1,5 +1,7 @@
 package me.melyukhov.streams.model.dao;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -13,6 +15,7 @@ public class UserInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @UniqueElements
     @Column
     @NotNull
     private String login;
@@ -28,9 +31,9 @@ public class UserInfo implements Serializable {
     @Column
     private String avatarId;
 
-    @Column
+    @Column(length = 32, columnDefinition = "varchar(32) default 'ACTIVE'")
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private Status status = Status.ACTIVE;
 
     @Column(name = "bio")
     private String BIO;
