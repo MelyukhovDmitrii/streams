@@ -37,4 +37,14 @@ public class CategoryServiceImpl implements CategoryService {
     public Category getByLink(String link) {
         return categoryRepository.findByLink(link).orElse(null);
     }
+
+    @Override
+    public Category getByCategory(String category) {
+        return categoryRepository.findByName(category).orElse(null);
+    }
+
+    @Override
+    public Category save(Category category) {
+        return categoryRepository.save(category);
+    }
 }

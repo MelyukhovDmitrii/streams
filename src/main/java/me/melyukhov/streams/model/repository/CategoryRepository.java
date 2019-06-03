@@ -8,5 +8,6 @@ import java.util.Optional;
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 
     Optional<Category> findByLink(String link);
+    Optional<Category> findByName(String name);
 
 }

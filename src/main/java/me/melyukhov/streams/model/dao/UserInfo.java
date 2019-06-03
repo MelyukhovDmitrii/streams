@@ -15,7 +15,6 @@ public class UserInfo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @UniqueElements
     @Column
     @NotNull
     private String login;

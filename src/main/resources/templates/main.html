@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
     <th:block th:if="${page=='home'}">
@@ -13,20 +16,28 @@
         <link th:case="translation" rel="stylesheet" href="/css/translation-page.css"/>
     </th:block>
     <title>_streams</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
+    <script type="text/javascript" src="/js/index-modal.js"></script>
 </head>
 <body>
 <div id="root">
+
     <nav class="top">
         <div class="logo">_streams</div>
         <ul class="list-inline main-menu" style="height: 60px">
             <li th:class="${active_main}"><a href="/" >Главная</a></li>
             <li th:class="${active_categories}"><a href="/categories">Категории</a></li>
             <li th:class="${active_translations}"><a href="/translations">Список трансляций</a></li>
-            <li th:class="${active_translation}" disabled="true"><a>Трансляция</a></li>
+            <li th:class="${active_translation}"><a href="#iw-modal" class="iw-modal-btn">Трансляция</a></li>
         </ul>
         <div class="auth_button_area">
-            <a href="/login#register">Регистрация</a>
-            <a href="/login">Авторизация</a>
+            <th:block sec:authorize="isAuthenticated()">
+                <a href="/logout">Выход</a>
+            </th:block>
+            <th:block sec:authorize="isAnonymous()" >
+                <a href="/login#register">Регистрация</a>
+                <a href="/login">Авторизация</a>
+            </th:block>
         </div>
     </nav>
     <div class="mid">
@@ -48,6 +59,44 @@
         </div>    
     </div>
     <div class="bot"></div>
+    <!--<th:block sec:authorize="isAuthenticated()">-->
+        <div id="iw-modal" class="iw-modal">
+            <div class="iw-modal-wrapper">
+                <div class="iw-CSS-modal-inner">
+                    <div class="iw-modal-header">
+                        <h3 class="iw-modal-title">Создание новой трансляции</h3>
+                        <a href="#close" title="Закрыть" class="iw-close">×</a>
+                    </div>
+                    <div class="iw-modal-text">
+                        <form action="/create/translation" method="POST">
+                            <div class="form-group">
+                                <div class="field-name">
+                                    <label for="translationName">Название трансляции</label>
+                                </div>
+                                <input type="text" id="translationName" name="translationName" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="field-name">
+                                    <label for="category">Категория</label>
+                                </div>
+                                <select class="select" name="category" id="category">
+                                    <th:block th:each="category : ${form_categories}">
+                                        <option th:value="${category}" th:text="${category}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="text" name="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--</th:block>-->
 </div>
 </body>
 </html>

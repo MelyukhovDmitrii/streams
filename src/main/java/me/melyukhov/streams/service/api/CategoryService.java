@@ -12,4 +12,8 @@ public interface CategoryService {
     List<Category> getAll();
 
     Category getByLink(String link);
+
+    Category getByCategory(String category);
+
+    Category save(Category category);
 }

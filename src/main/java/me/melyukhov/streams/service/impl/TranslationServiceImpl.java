@@ -39,6 +39,10 @@ public class TranslationServiceImpl implements TranslationService {
 
     @Override
     public Translation save(Translation translation) {
+        return translationRepository.save(translation);
+    }
+
+    public void initKeys(Translation translation){
         KeyPairGenerator keyPairGenerator1 = null;
         try {
             keyPairGenerator1 = KeyPairGenerator.getInstance("RSA");
@@ -46,17 +50,15 @@ public class TranslationServiceImpl implements TranslationService {
             e.printStackTrace();
         }
         if(keyPairGenerator1 != null){
-            KeyPair keyPair = keyPairGenerator1 != null ? keyPairGenerator1.generateKeyPair() : null;
-            String privatekey = new String(keyPair.getPrivate().getEncoded());
-            String publicKey = new String(keyPair.getPublic().getEncoded());
+            //KeyPair keyPair = keyPairGenerator1 != null ? keyPairGenerator1.generateKeyPair() : null;
+            String privatekey = "privateKey";//new String(keyPair.getPrivate().getEncoded());
+            String publicKey = "publicKey";//new String(keyPair.getPublic().getEncoded());
             TranslationKeys translationKeys = new TranslationKeys();
             translationKeys.setPrivateKey(privatekey);
             translationKeys.setPublicKey(publicKey);
             translationKeys = translationKeysRepository.save(translationKeys);
             translation.setTranslationKeys(translationKeys);
-            return translationRepository.save(translation);
         }
-        return null;
     }
 
     @Override

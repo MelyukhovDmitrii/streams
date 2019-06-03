@@ -20,7 +20,7 @@ insert into translation_keys (private_key, public_key) values ('1231241d', 'wdq1
 insert into translation_keys (private_key, public_key) values ('1231241d', 'wdq1121');
 
 insert into user_info (login, email, password) values ('EjiSarmat', 'eji@mail.com', 'asdasdqw');
-insert into user_info (login, email, password) values ('streamer1', 'eji@mail.com', 'asdasdqw');
+insert into user_info (login, email, password) values ('user', 'my@mail', '$2a$10$0nMBj/HhYNzLiPthOMmLduuI.pxZnJhVpUA/c5vJjgy8kPY6grlhu');
 insert into user_info (login, email, password) values ('streamer2', 'eji@mail.com', 'asdasdqw');
 insert into user_info (login, email, password) values ('streamer3', 'eji@mail.com', 'asdasdqw');
 

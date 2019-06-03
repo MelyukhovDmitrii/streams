@@ -1,4 +1,4 @@
-package me.melyukhov.streams.controller;
+package me.melyukhov.streams.component;
 
 import me.melyukhov.streams.model.dao.Category;
 import me.melyukhov.streams.model.dao.Translation;
