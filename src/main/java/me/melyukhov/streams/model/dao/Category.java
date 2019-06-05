@@ -23,25 +23,12 @@ public class Category implements Serializable {
 
     private String link;
 
-    @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn( name="translation", referencedColumnName = "ID" )
-    @Access( AccessType.PROPERTY )
-    private Set<Translation> translations;
-
     public String getLink() {
         return link;
     }
 
     public void setLink(String link) {
         this.link = link;
-    }
-
-    public Set<Translation> getTranslations() {
-        return translations;
-    }
-
-    public void setTranslations(Set<Translation> translations) {
-        this.translations = translations;
     }
 
     public int getId() {

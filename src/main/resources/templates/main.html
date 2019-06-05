@@ -28,7 +28,24 @@
             <li th:class="${active_main}"><a href="/" >Главная</a></li>
             <li th:class="${active_categories}"><a href="/categories">Категории</a></li>
             <li th:class="${active_translations}"><a href="/translations">Список трансляций</a></li>
-            <li th:class="${active_translation}"><a href="#iw-modal" class="iw-modal-btn">Трансляция</a></li>
+            <th:block sec:authorize="isAuthenticated()">
+                <th:block th:if="${haveTranslation==true}">
+                    <li th:class="${active_translation}"><a th:href="${myTranslationLink}">Трансляция</a></li>
+                    <th:block th:if="${isHis==true}">
+                        <th:block th:if="${page=='translation'}">
+                            <li><a th:href="@{${myTranslationLink} + '/drop'}">Остановить трансляцию</a></li>
+                            <li><a href="#iw-modal" class="iw-modal-btn">Ключ</a></li>
+                        </th:block>
+                    </th:block>
+                </th:block>
+                <th:block th:if="${haveTranslation==false}">
+                    <li th:class="${active_translation}"><a href="#iw-modal" class="iw-modal-btn">Трансляция</a></li>
+                </th:block>
+            </th:block>
+            <th:block sec:authorize="isAnonymous()">
+                <li th:class="${active_translation}"><a>Трансляция</a></li>
+            </th:block>
+
         </ul>
         <div class="auth_button_area">
             <th:block sec:authorize="isAuthenticated()">
@@ -59,44 +76,66 @@
         </div>    
     </div>
     <div class="bot"></div>
-    <!--<th:block sec:authorize="isAuthenticated()">-->
-        <div id="iw-modal" class="iw-modal">
-            <div class="iw-modal-wrapper">
-                <div class="iw-CSS-modal-inner">
-                    <div class="iw-modal-header">
-                        <h3 class="iw-modal-title">Создание новой трансляции</h3>
-                        <a href="#close" title="Закрыть" class="iw-close">×</a>
-                    </div>
-                    <div class="iw-modal-text">
-                        <form action="/create/translation" method="POST">
-                            <div class="form-group">
-                                <div class="field-name">
-                                    <label for="translationName">Название трансляции</label>
-                                </div>
-                                <input type="text" id="translationName" name="translationName" required="required"/>
-                            </div>
-                            <div class="form-group">
-                                <div class="field-name">
-                                    <label for="category">Категория</label>
-                                </div>
-                                <select class="select" name="category" id="category">
-                                    <th:block th:each="category : ${form_categories}">
-                                        <option th:value="${category}" th:text="${category}"></option>
-                                    </th:block>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="text" name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input type="submit">
-                            </div>
-                        </form>
+    <th:block sec:authorize="isAuthenticated()">
+
+        <th:block th:if="${haveTranslation==true}">
+            <div id="iw-modal" class="iw-modal">
+                <div class="iw-modal-wrapper">
+                    <div class="iw-CSS-modal-inner">
+                        <div class="iw-modal-header">
+                            <h3 class="iw-modal-title">Приватный ключ трансляции</h3>
+                            <a href="#close" title="Закрыть" class="iw-close">×</a>
+                        </div>
+                        <div class="iw-modal-text">
+                            <p th:text="${key}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    <!--</th:block>-->
+        </th:block>
+
+        <th:block th:if="${haveTranslation==false}">
+            <div id="iw-modal" class="iw-modal">
+                <div class="iw-modal-wrapper">
+                    <div class="iw-CSS-modal-inner">
+                        <div class="iw-modal-header">
+                            <h3 class="iw-modal-title">Создание новой трансляции</h3>
+                            <a href="#close" title="Закрыть" class="iw-close">×</a>
+                        </div>
+                        <div class="iw-modal-text">
+                            <form action="/create/translation" method="POST">
+                                <div class="form-group">
+                                    <div class="field-name">
+                                        <label for="translationName">Название трансляции</label>
+                                    </div>
+                                    <input type="text" id="translationName" name="translationName" required="required" style="width: 430px;"/>
+                                </div>
+                                <div class="form-group">
+                                    <div class="field-name">
+                                        <label for="category">Категория</label>
+                                    </div>
+                                    <select class="select" name="category" id="category">
+                                        <th:block th:each="category : ${form_categories}">
+                                            <option th:value="${category}" th:text="${category}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="field-name">
+                                        <label for="description">Описание</label>
+                                    </div>
+                                    <textarea id="description" class="text" name="description" style="width: 430px; height: 200px;"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+    </th:block>
 </div>
 </body>
 </html>
