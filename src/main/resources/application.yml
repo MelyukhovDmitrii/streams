@@ -13,9 +13,9 @@ spring:
   datasource:
     platform: postgres
     url: jdbc:postgresql://localhost:5432/streams
-    username: postgres
+    username: test
     password: 123
     driverClassName: org.postgresql.Driver
     initialization-mode: always
 server:
-  port: 80
+  port: 8080

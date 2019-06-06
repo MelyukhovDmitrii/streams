@@ -65,6 +65,8 @@ public class PageController {
         model.addAttribute("categories", categoryService.getAll());
         model.addAttribute("active_categories", "active");
         model.addAttribute("page", "categories");
+        List<String> formCategories = categoryService.getAll().stream().map(i -> i.getName()).collect(Collectors.toList());
+        model.addAttribute("form_categories", formCategories);
         return "main";
     }
 
@@ -75,6 +77,8 @@ public class PageController {
         model.addAttribute("translations", translationList);
         model.addAttribute("active_translations", "active");
         model.addAttribute("page", "translations");
+        List<String> formCategories = categoryService.getAll().stream().map(i -> i.getName()).collect(Collectors.toList());
+        model.addAttribute("form_categories", formCategories);
         return "main";
     }
 
@@ -84,6 +88,8 @@ public class PageController {
         model.addAttribute("translations", translationService.getAllTranslations());
         model.addAttribute("active_translations", "active");
         model.addAttribute("page", "translations");
+        List<String> formCategories = categoryService.getAll().stream().map(i -> i.getName()).collect(Collectors.toList());
+        model.addAttribute("form_categories", formCategories);
         return "main";
     }
 
@@ -94,6 +100,8 @@ public class PageController {
         model.addAttribute("translation", translationService.getTranslationByLink(id));
         model.addAttribute("active_translation", "active");
         model.addAttribute("page", "translation");
+        List<String> formCategories = categoryService.getAll().stream().map(i -> i.getName()).collect(Collectors.toList());
+        model.addAttribute("form_categories", formCategories);
         return "main";
     }
 
@@ -188,15 +196,5 @@ public class PageController {
                 }
             }
         }
-    }
-
-    @GetMapping(path = "/index")
-    public String modal(){
-        return "index";
-    }
-
-    @GetMapping(path = "/login")
-    public String login(){
-        return "login";
     }
 }

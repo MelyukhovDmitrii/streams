@@ -43,9 +43,7 @@ public class Translation implements Serializable {
     @JoinColumn(name="translation_keys")
     private TranslationKeys translationKeys;
 
-//    @JoinColumn(name = "category", nullable = false)
-//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-//
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category", referencedColumnName = "",nullable = false)
     private Category category;
